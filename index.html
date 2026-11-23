@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Emberfall: The Emberwild Saga</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <!-- TITLE -->
+  <section id="title" class="screen active">
+    <div class="embers"></div>
+    <h1 class="game-title">Emberfall</h1>
+    <div class="game-sub">The Emberwild Saga</div>
+    <div class="title-menu">
+      <button id="btnNew" class="btn btn-gold">New Game</button>
+      <button id="btnContinue" class="btn" disabled>Continue</button>
+      <button id="btnLoad" class="btn" disabled>Load Game</button>
+      <button id="btnHelpTitle" class="btn">How to Play</button>
+    </div>
+    <div id="titleStatus" class="title-status"></div>
+  </section>
+
+  <!-- CAMPAIGN -->
+  <section id="campaign" class="screen">
+    <header class="screen-head"><h2>Choose an Adventure</h2><button class="btn btn-small" data-to="title">Back</button></header>
+    <div id="campaignTabs" class="tabs"></div>
+    <div id="campaignCards" class="cards"></div>
+    <div class="screen-foot">
+      <button id="btnAssemble" class="btn btn-gold">Assemble the Company</button>
+      <button class="btn" data-to="title">Back</button>
+    </div>
+  </section>
+
+  <!-- ASSEMBLY -->
+  <section id="assembly" class="screen">
+    <header class="screen-head"><h2>Assemble Your Company</h2><button class="btn btn-small" data-to="campaign">Back</button></header>
+    <div class="assembly-wrap">
+      <div class="assembly-col"><h3>Waiting Roster</h3><div id="waitingRoster" class="roster"></div><button id="btnCreateHero" class="btn btn-small">Create Hero</button></div>
+      <div class="assembly-col"><h3>Active Party</h3><div id="partyList" class="roster"></div><div id="assemblyFunds" class="funds"></div></div>
+    </div>
+    <div class="screen-foot"><button id="btnBegin" class="btn btn-gold" disabled>Begin Adventure</button></div>
+  </section>
+
+  <!-- GAME -->
+  <section id="game" class="screen">
+    <div id="hud">
+      <button id="hudParty" class="hud-btn" title="Party (P)">Party</button>
+      <div id="hudPips" class="pips"></div>
+      <div id="hudLoc" class="hud-loc"></div>
+      <div id="hudAhead" class="hud-ahead"></div>
+      <div id="hudClock" class="hud-clock"></div>
+      <div id="hudGold" class="hud-gold"></div>
+    </div>
+    <div id="stage">
+      <canvas id="view3d"></canvas>
+      <canvas id="overCanvas" style="display:none"></canvas>
+      <canvas id="combatCanvas" style="display:none"></canvas>
+      <button id="viewArrow" class="view-arrow" title="Touch controls">✥</button>
+    </div>
+    <div id="cmdbar"></div>
+    <div id="cmdhint"></div>
+    <div id="gameLower">
+      <div id="log"></div>
+      <canvas id="minimap" width="500" height="420"></canvas>
+    </div>
+    <div id="navpad" style="display:none"></div>
+  </section>
+
+  <!-- PARTY DRAWER -->
+  <aside id="partyDrawer" class="drawer"><div class="drawer-head"><h3>Party</h3><button class="btn btn-small" id="partyClose">Close</button></div><div id="partyBody" class="drawer-body"></div></aside>
+
+  <!-- OVERLAY -->
+  <div id="overlay"></div>
+  <div id="modal" class="modal hidden"><div id="modalBody"></div></div>
+</div>
+
+<script src="js/rules.js"></script>
+<script src="js/data.js"></script>
+<script src="js/modules.js"></script>
+<script src="js/monsters.js"></script>
+<script src="js/wilds.js"></script>
+<script src="js/treasure.js"></script>
+<script src="js/adventures.js"></script>
+<script src="js/figures.js"></script>
+<script src="js/view3d.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/combat.js"></script>
+<script src="js/overland.js"></script>
+<script src="js/campaign.js"></script>
+<script src="js/journal.js"></script>
+<script src="js/map.js"></script>
+<script src="js/bestiary.js"></script>
+<script src="js/navpad.js"></script>
+<script src="js/watch.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
